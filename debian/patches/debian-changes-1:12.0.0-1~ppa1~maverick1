@@ -1,0 +1,37 @@
+Description: Upstream changes introduced in version 1:12.0.0-1~ppa1~maverick1
+ This patch has been created by dpkg-source during the package build.
+ Here's the last changelog entry, hopefully it gives details on why
+ those changes were made:
+ .
+ twisted-conch (1:12.0.0-1~ppa1~maverick1) maverick; urgency=low
+ .
+   * New upstream version.
+   * Rebuild package for use in PPA.
+ .
+ The person named in the Author field signed this changelog entry.
+Author: Jessica McKellar <jesstess@mit.edu>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- twisted-conch-12.0.0.orig/doc/man/cftp.1
++++ twisted-conch-12.0.0/doc/man/cftp.1
+@@ -12,7 +12,7 @@
+ .Op Fl s Ar subsystem
+ .Os
+ .Sh DESCRIPTION
+-.Nm cftp
++.Nm
+ is a client for logging into a remote machine and executing commands to send and receive file information. It can wrap a number of file transfer subsystems
+ .Pp
+ The options are as follows:

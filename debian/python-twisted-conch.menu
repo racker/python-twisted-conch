@@ -1,0 +1,5 @@
+?package(python-twisted-conch):\
+	needs="x11"\
+	section="Applications/Network/Communication"\
+	title="Twisted SSH Client"\
+	command="/usr/bin/tkconch"
