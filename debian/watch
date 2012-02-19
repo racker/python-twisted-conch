@@ -1,0 +1,2 @@
+version=3
+http://tmrc.mit.edu/mirror/twisted/Conch/(\d\.\d)/ TwistedConch-([\d\.]*)\.tar\.bz2

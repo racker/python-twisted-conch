@@ -1,0 +1,11 @@
+--- twisted-conch-10.1.0.orig/doc/man/cftp.1
++++ twisted-conch-10.1.0/doc/man/cftp.1
+@@ -12,7 +12,7 @@
+ .Op Fl s Ar subsystem
+ .Os
+ .Sh DESCRIPTION
+-.Nm
++.Nm cftp
+ is a client for logging into a remote machine and executing commands to send and receive file information. It can wrap a number of file transfer subsystems
+ .Pp
+ The options are as follows:

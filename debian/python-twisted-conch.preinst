@@ -1,0 +1,7 @@
+#! /bin/sh -e
+
+if [ -h /usr/share/doc/python-twisted-conch ]; then
+    rm -f /usr/share/doc/python-twisted-conch
+fi
+
+#DEBHELPER#

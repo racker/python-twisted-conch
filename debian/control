@@ -1,0 +1,20 @@
+Source: twisted-conch
+Section: python
+Priority: optional
+Maintainer: Matthias Klose <doko@debian.org>
+Uploaders: Free Ekanayaka <freee@debian.org>
+Build-Depends: debhelper (>=7.0.50~), patch
+Build-Depends-Indep: python-central (>= 0.6.11), python-all, python-twisted-core (>= 12.0)
+Build-Conflicts: python-setuptools
+XS-Python-Version: all
+Standards-Version: 3.9.2
+
+Package: python-twisted-conch
+Architecture: all
+Depends: ${python:Depends}, python-crypto (>= 2.0.1+dfsg1-1.1), python-pyasn1, python-twisted-core (>= 12.0), ${misc:Depends}
+Provides: conch, ${python:Provides}
+Conflicts: python2.3-twisted, python2.3-twisted-conch, python2.4-twisted-conch
+Replaces: python2.3-twisted, python2.3-twisted-conch, python2.4-twisted-conch
+Description: Twisted SSH Implementation
+ A client/server implementation of the SSH protocol, using the
+ twisted framework.
