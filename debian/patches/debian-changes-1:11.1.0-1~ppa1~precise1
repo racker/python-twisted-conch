@@ -1,0 +1,1107 @@
+Description: Upstream changes introduced in version 1:11.1.0-1~ppa1~precise1
+ This patch has been created by dpkg-source during the package build.
+ Here's the last changelog entry, hopefully it gives details on why
+ those changes were made:
+ .
+ twisted-conch (1:11.1.0-1~ppa1~precise1) precise; urgency=low
+ .
+   * Rebuild package for use in PPA.
+ .
+ The person named in the Author field signed this changelog entry.
+Author: Jessica McKellar <jesstess@mit.edu>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- twisted-conch-11.1.0.orig/README
++++ twisted-conch-11.1.0/README
+@@ -1,4 +1,4 @@
+-Twisted Conch 11.1.0
++Twisted Conch 12.0.0
+ 
+ Twisted Conch depends on Twisted Core and on Python Crypto extensions
+ (<http://www.pycrypto.org>).
+--- twisted-conch-11.1.0.orig/NEWS
++++ twisted-conch-11.1.0/NEWS
+@@ -1,6 +1,24 @@
+ Ticket numbers in this file can be looked up by visiting
+ http://twistedmatrix.com/trac/ticket/<number>
+ 
++Twisted Conch 12.0.0 (2012-02-10)
++=================================
++
++Features
++--------
++ - use Python shadow module for authentication if it's available
++   (#3242)
++
++Bugfixes
++--------
++ - twisted.conch.ssh.transport.messages no longer ends with with old
++   message IDs on platforms with differing dict() orderings (#5352)
++
++Other
++-----
++ - #5225
++
++
+ Twisted Conch 11.1.0 (2011-11-15)
+ =================================
+ 
+--- twisted-conch-11.1.0.orig/LICENSE
++++ twisted-conch-11.1.0/LICENSE
+@@ -1,4 +1,4 @@
+-Copyright (c) 2001-2011
++Copyright (c) 2001-2012
+ Allen Short
+ Andy Gayton
+ Andrew Bennetts
+--- twisted-conch-11.1.0.orig/doc/index.html
++++ twisted-conch-11.1.0/doc/index.html
+@@ -20,6 +20,6 @@ Twisted Conch</li>
+ </div>
+ 
+     <p><a href="howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/examples/index.html
++++ twisted-conch-11.1.0/doc/examples/index.html
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+-<title>Twisted Documentation: Twisted.Conch code examples</title>
++<title>Twisted Documentation: Twisted Conch code examples</title>
+ <link href="../howto/stylesheet.css" rel="stylesheet" type="text/css"/>
+   </head>
+ 
+   <body bgcolor="white">
+-    <h1 class="title">Twisted.Conch code examples</h1>
++    <h1 class="title">Twisted Conch code examples</h1>
+     <div class="toc"><ol><li><a href="#auto0">Simple SSH server and client</a></li><li><a href="#auto1">Simple telnet server</a></li><li><a href="#auto2">twisted.conch.insults examples</a></li></ol></div>
+     <div class="content">
+     <span/>
+@@ -35,6 +35,6 @@
+ </div>
+ 
+     <p><a href="../howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/man/conch-man.html
++++ twisted-conch-11.1.0/doc/man/conch-man.html
+@@ -143,6 +143,6 @@ warranty; not even for MERCHANTABILITY o
+ </div>
+ 
+     <p><a href="../howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/man/cftp.1
++++ twisted-conch-11.1.0/doc/man/cftp.1
+@@ -12,7 +12,7 @@
+ .Op Fl s Ar subsystem
+ .Os
+ .Sh DESCRIPTION
+-.Nm cftp
++.Nm
+ is a client for logging into a remote machine and executing commands to send and receive file information. It can wrap a number of file transfer subsystems
+ .Pp
+ The options are as follows:
+--- twisted-conch-11.1.0.orig/doc/man/tkconch-man.html
++++ twisted-conch-11.1.0/doc/man/tkconch-man.html
+@@ -124,6 +124,6 @@ warranty; not even for MERCHANTABILITY o
+ </div>
+ 
+     <p><a href="../howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/man/ckeygen-man.html
++++ twisted-conch-11.1.0/doc/man/ckeygen-man.html
+@@ -102,6 +102,6 @@ warranty; not even for MERCHANTABILITY o
+ </div>
+ 
+     <p><a href="../howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/man/cftp-man.html
++++ twisted-conch-11.1.0/doc/man/cftp-man.html
+@@ -82,6 +82,6 @@ warranty; not even for MERCHANTABILITY o
+ </div>
+ 
+     <p><a href="../howto/index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/howto/index.html
++++ twisted-conch-11.1.0/doc/howto/index.html
+@@ -23,6 +23,6 @@
+ </div>
+ 
+     <p><a href="index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/doc/howto/conch_client.html
++++ twisted-conch-11.1.0/doc/howto/conch_client.html
+@@ -1,11 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?><!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+-<title>Twisted Documentation: Writing a client with Twisted.Conch</title>
++<title>Twisted Documentation: Writing a client with Twisted Conch</title>
+ <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
+   </head>
+ 
+   <body bgcolor="white">
+-    <h1 class="title">Writing a client with Twisted.Conch</h1>
++    <h1 class="title">Writing a client with Twisted Conch</h1>
+     <div class="toc"><ol><li><a href="#auto0">Introduction</a></li><li><a href="#auto1">Writing a client</a></li><li><a href="#auto2">The Transport</a></li><li><a href="#auto3">The Authorization Client</a></li><li><a href="#auto4">The Connection</a></li><li><a href="#auto5">The Channel</a></li><li><a href="#auto6">The main() function</a></li></ol></div>
+     <div class="content">
+     <span/>
+@@ -15,12 +15,12 @@
+ <p>In the original days of computing, rsh/rlogin were used to connect to
+ remote computers and execute commands. These commands had the problem
+ that the passwords and commands were sent in the clear. To solve this
+-problem, the SSH protocol was created. Twisted.Conch implements the
++problem, the SSH protocol was created. Twisted Conch implements the
+ second version of this protocol.</p>
+ 
+     <h2>Writing a client<a name="auto1"/></h2>
+ 
+-<p>Writing a client with Conch involves sub-classing 4 classes: <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.conch.ssh.transport.SSHClientTransport.html" title="twisted.conch.ssh.transport.SSHClientTransport">twisted.conch.ssh.transport.SSHClientTransport</a></code>, <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.conch.ssh.userauth.SSHUserAuthClient.html" title="twisted.conch.ssh.userauth.SSHUserAuthClient">twisted.conch.ssh.userauth.SSHUserAuthClient</a></code>, <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.conch.ssh.connection.SSHConnection.html" title="twisted.conch.ssh.connection.SSHConnection">twisted.conch.ssh.connection.SSHConnection</a></code>, and <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.conch.ssh.channel.SSHChannel.html" title="twisted.conch.ssh.channel.SSHChannel">twisted.conch.ssh.channel.SSHChannel</a></code>. We'll start out
++<p>Writing a client with Conch involves sub-classing 4 classes: <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.conch.ssh.transport.SSHClientTransport.html" title="twisted.conch.ssh.transport.SSHClientTransport">twisted.conch.ssh.transport.SSHClientTransport</a></code>, <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.conch.ssh.userauth.SSHUserAuthClient.html" title="twisted.conch.ssh.userauth.SSHUserAuthClient">twisted.conch.ssh.userauth.SSHUserAuthClient</a></code>, <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.conch.ssh.connection.SSHConnection.html" title="twisted.conch.ssh.connection.SSHConnection">twisted.conch.ssh.connection.SSHConnection</a></code>, and <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.conch.ssh.channel.SSHChannel.html" title="twisted.conch.ssh.channel.SSHChannel">twisted.conch.ssh.channel.SSHChannel</a></code>. We'll start out
+ with <code class="python">SSHClientTransport</code> because it's the base 
+ of the client.</p>
+ 
+@@ -63,7 +63,7 @@ implement is <code class="python">verify
+ is called with two strings: the public key sent by the server and its
+ fingerprint. You should verify the host key the server sends, either
+ by checking against a hard-coded value as in the example, or by asking
+-the user. <code class="python">verifyHostKey</code> returns a <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.internet.defer.Deferred.html" title="twisted.internet.defer.Deferred">twisted.internet.defer.Deferred</a></code> which gets a callback
++the user. <code class="python">verifyHostKey</code> returns a <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.internet.defer.Deferred.html" title="twisted.internet.defer.Deferred">twisted.internet.defer.Deferred</a></code> which gets a callback
+ if the host key is valid, or an errback if it is not. Note that in the
+ above, replace 'user' with the username you're attempting to ssh with,
+ for instance a call to <code class="python">os.getlogin()</code> for the
+@@ -249,14 +249,14 @@ events to the other side. We pass the me
+ send the request for this channel. The 2nd argument of 'exec' tells the
+ server that we want to execute a command. The third argument is the data
+ that accompanies the request. 
+-<code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.conch.ssh.common.NS.html" title="twisted.conch.ssh.common.NS">common.NS</a></code> encodes
++<code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.conch.ssh.common.NS.html" title="twisted.conch.ssh.common.NS">common.NS</a></code> encodes
+ the data as a length-prefixed string, which is how the server expects
+ the data. We also say that we want a reply saying that the process has a
+ been started. <code class="python">sendRequest()</code> then returns a 
+ <code class="python">Deferred</code> which we add a callback for.</p>
+ 
+ <p>Once the callback fires, we send the data. <code class="python">SSHChannel</code> supports the 
+-<code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.internet.interfaces.ITransport.html" title="twisted.internet.interfaces.ITransport">twisted.internet.interfaces.ITransport</a></code> 
++<code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.internet.interfaces.ITransport.html" title="twisted.internet.interfaces.ITransport">twisted.internet.interfaces.ITransport</a></code> 
+ interface, so
+ it can be given to Protocols to run them over the secure
+ connection. In our case, we just write the data directly. <code class="python">sendEOF()</code> does not follow the interface,
+@@ -294,7 +294,7 @@ connection are closed, and we use it to
+ 
+ <P>We call <code class="python">connectTCP()</code> to connect to
+ localhost, port 22 (the standard port for ssh), and pass it an instance
+-of <code class="API"><a href="http://twistedmatrix.com/documents/11.1.0/api/twisted.internet.protocol.ClientFactory.html" title="twisted.internet.protocol.ClientFactory">twisted.internet.protocol.ClientFactory</a></code>.
++of <code class="API"><a href="http://twistedmatrix.com/documents/12.0.0/api/twisted.internet.protocol.ClientFactory.html" title="twisted.internet.protocol.ClientFactory">twisted.internet.protocol.ClientFactory</a></code>.
+ This instance has the attribute <code class="python">protocol</code>
+ set to our earlier <code class="python">ClientTransport</code>
+ class. Note that the protocol attribute is set to the class <code class="python">ClientTransport</code>, not an instance of 
+@@ -316,6 +316,6 @@ logging to stdout.</P>
+ </div>
+ 
+     <p><a href="index.html">Index</a></p>
+-    <span class="version">Version: 11.1.0</span>
++    <span class="version">Version: 12.0.0</span>
+   </body>
+ </html>
+\ No newline at end of file
+--- twisted-conch-11.1.0.orig/twisted/conch/checkers.py
++++ twisted-conch-11.1.0/twisted/conch/checkers.py
+@@ -15,9 +15,15 @@ else:
+     import crypt
+ 
+ try:
+-    # get this from http://www.twistedmatrix.com/users/z3p/files/pyshadow-0.2.tar.gz
+-    import shadow
+-except:
++    # Python 2.5 got spwd to interface with shadow passwords
++    import spwd
++except ImportError:
++    spwd = None
++    try:
++        import shadow
++    except ImportError:
++        shadow = None
++else:
+     shadow = None
+ 
+ try:
+@@ -38,56 +44,92 @@ from twisted.python.util import runAsEff
+ from twisted.python.filepath import FilePath
+ 
+ 
++
+ def verifyCryptedPassword(crypted, pw):
+-    if crypted[0] == '$': # md5_crypt encrypted
+-        salt = '$1$' + crypted.split('$')[2]
++    return crypt.crypt(pw, crypted) == crypted
++
++
++
++def _pwdGetByName(username):
++    """
++    Look up a user in the /etc/passwd database using the pwd module.  If the
++    pwd module is not available, return None.
++
++    @param username: the username of the user to return the passwd database
++        information for.
++    """
++    if pwd is None:
++        return None
++    return pwd.getpwnam(username)
++
++
++
++def _shadowGetByName(username):
++    """
++    Look up a user in the /etc/shadow database using the spwd or shadow
++    modules.  If neither module is available, return None.
++
++    @param username: the username of the user to return the shadow database
++        information for.
++    """
++    if spwd is not None:
++        f = spwd.getspnam
++    elif shadow is not None:
++        f = shadow.getspnam
+     else:
+-        salt = crypted[:2]
+-    return crypt.crypt(pw, salt) == crypted
++        return None
++    return runAsEffectiveUser(0, 0, f, username)
++
++
+ 
+ class UNIXPasswordDatabase:
++    """
++    A checker which validates users out of the UNIX password databases, or
++    databases of a compatible format.
++
++    @ivar _getByNameFunctions: a C{list} of functions which are called in order
++        to valid a user.  The default value is such that the /etc/passwd
++        database will be tried first, followed by the /etc/shadow database.
++    """
+     credentialInterfaces = IUsernamePassword,
+     implements(ICredentialsChecker)
+ 
++
++    def __init__(self, getByNameFunctions=None):
++        if getByNameFunctions is None:
++            getByNameFunctions = [_pwdGetByName, _shadowGetByName]
++        self._getByNameFunctions = getByNameFunctions
++
++
+     def requestAvatarId(self, credentials):
+-        if pwd:
++        for func in self._getByNameFunctions:
+             try:
+-                cryptedPass = pwd.getpwnam(credentials.username)[1]
++                pwnam = func(credentials.username)
+             except KeyError:
+                 return defer.fail(UnauthorizedLogin("invalid username"))
+             else:
+-                if cryptedPass not in ['*', 'x'] and \
+-                    verifyCryptedPassword(cryptedPass, credentials.password):
+-                    return defer.succeed(credentials.username)
+-        if shadow:
+-            gid = os.getegid()
+-            uid = os.geteuid()
+-            os.setegid(0)
+-            os.seteuid(0)
+-            try:
+-                shadowPass = shadow.getspnam(credentials.username)[1]
+-            except KeyError:
+-                os.setegid(gid)
+-                os.seteuid(uid)
+-                return defer.fail(UnauthorizedLogin("invalid username"))
+-            os.setegid(gid)
+-            os.seteuid(uid)
+-            if verifyCryptedPassword(shadowPass, credentials.password):
+-                return defer.succeed(credentials.username)
+-            return defer.fail(UnauthorizedLogin("invalid password"))
+-
++                if pwnam is not None:
++                    crypted = pwnam[1]
++                    if crypted == '':
++                        continue
++                    if verifyCryptedPassword(crypted, credentials.password):
++                        return defer.succeed(credentials.username)
++        # fallback
+         return defer.fail(UnauthorizedLogin("unable to verify password"))
+ 
+ 
++
+ class SSHPublicKeyDatabase:
+     """
+     Checker that authenticates SSH public keys, based on public keys listed in
+     authorized_keys and authorized_keys2 files in user .ssh/ directories.
+     """
+-
+-    credentialInterfaces = ISSHPrivateKey,
+     implements(ICredentialsChecker)
+ 
++    credentialInterfaces = (ISSHPrivateKey,)
++
++    _userdb = pwd
++
+     def requestAvatarId(self, credentials):
+         d = defer.maybeDeferred(self.checkKey, credentials)
+         d.addCallback(self._cbRequestAvatarId, credentials)
+@@ -146,7 +188,7 @@ class SSHPublicKeyDatabase:
+ 
+         @return: A list of L{FilePath} instances to files with the authorized keys.
+         """
+-        pwent = pwd.getpwnam(credentials.username)
++        pwent = self._userdb.getpwnam(credentials.username)
+         root = FilePath(pwent.pw_dir).child('.ssh')
+         files = ['authorized_keys', 'authorized_keys2']
+         return [root.child(f) for f in files]
+@@ -158,7 +200,7 @@ class SSHPublicKeyDatabase:
+         credentials.
+         """
+         uid, gid = os.geteuid(), os.getegid()
+-        ouid, ogid = pwd.getpwnam(credentials.username)[2:4]
++        ouid, ogid = self._userdb.getpwnam(credentials.username)[2:4]
+         for filepath in self.getAuthorizedKeysFiles(credentials):
+             if not filepath.exists():
+                 continue
+--- twisted-conch-11.1.0.orig/twisted/conch/_version.py
++++ twisted-conch-11.1.0/twisted/conch/_version.py
+@@ -1,3 +1,3 @@
+ # This is an auto-generated file. Do not edit it.
+ from twisted.python import versions
+-version = versions.Version('twisted.conch', 11, 1, 0)
++version = versions.Version('twisted.conch', 12, 0, 0)
+--- twisted-conch-11.1.0.orig/twisted/conch/ssh/transport.py
++++ twisted-conch-11.1.0/twisted/conch/ssh/transport.py
+@@ -1582,5 +1582,10 @@ DISCONNECT_ILLEGAL_USER_NAME = 15
+ 
+ messages = {}
+ for name, value in globals().items():
+-    if name.startswith('MSG_'):
++    # Avoid legacy messages which overlap with never ones
++    if name.startswith('MSG_') and not name.startswith('MSG_KEXDH_'):
+         messages[value] = name
++# Check for regressions (#5352)
++if 'MSG_KEXDH_INIT' in messages or 'MSG_KEXDH_REPLY' in messages:
++    raise RuntimeError(
++        "legacy SSH mnemonics should not end up in messages dict")
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_checkers.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_checkers.py
+@@ -6,45 +6,182 @@ Tests for L{twisted.conch.checkers}.
+ """
+ 
+ try:
+-    import pwd
++    import crypt
+ except ImportError:
+-    pwd = None
++    cryptSkip = 'cannot run without crypt module'
++else:
++    cryptSkip = None
+ 
+ import os, base64
+ 
++from twisted.python import util
++from twisted.python.failure import Failure
+ from twisted.trial.unittest import TestCase
+ from twisted.python.filepath import FilePath
+ from twisted.cred.checkers import InMemoryUsernamePasswordDatabaseDontUse
+ from twisted.cred.credentials import UsernamePassword, IUsernamePassword, \
+     SSHPrivateKey, ISSHPrivateKey
+ from twisted.cred.error import UnhandledCredentials, UnauthorizedLogin
+-from twisted.python.fakepwd import UserDatabase
++from twisted.python.fakepwd import UserDatabase, ShadowDatabase
+ from twisted.test.test_process import MockOS
+ 
+ try:
+     import Crypto.Cipher.DES3
+     import pyasn1
+ except ImportError:
+-    SSHPublicKeyDatabase = None
++    dependencySkip = "can't run without Crypto and PyASN1"
+ else:
++    dependencySkip = None
+     from twisted.conch.ssh import keys
+-    from twisted.conch.checkers import SSHPublicKeyDatabase, SSHProtocolChecker
++    from twisted.conch import checkers
+     from twisted.conch.error import NotEnoughAuthentication, ValidPublicKey
+     from twisted.conch.test import keydata
+ 
++if getattr(os, 'geteuid', None) is None:
++    euidSkip = "Cannot run without effective UIDs (questionable)"
++else:
++    euidSkip = None
++
++
++class HelperTests(TestCase):
++    """
++    Tests for helper functions L{verifyCryptedPassword}, L{_pwdGetByName} and
++    L{_shadowGetByName}.
++    """
++    skip = cryptSkip or dependencySkip
++
++    def setUp(self):
++        self.mockos = MockOS()
++
++
++    def test_verifyCryptedPassword(self):
++        """
++        L{verifyCryptedPassword} returns C{True} if the plaintext password
++        passed to it matches the encrypted password passed to it.
++        """
++        password = 'secret string'
++        salt = 'salty'
++        crypted = crypt.crypt(password, salt)
++        self.assertTrue(
++            checkers.verifyCryptedPassword(crypted, password),
++            '%r supposed to be valid encrypted password for %r' % (
++                crypted, password))
++
++
++    def test_verifyCryptedPasswordMD5(self):
++        """
++        L{verifyCryptedPassword} returns True if the provided cleartext password
++        matches the provided MD5 password hash.
++        """
++        password = 'password'
++        salt = '$1$salt'
++        crypted = crypt.crypt(password, salt)
++        self.assertTrue(
++            checkers.verifyCryptedPassword(crypted, password),
++            '%r supposed to be valid encrypted password for %s' % (
++                crypted, password))
++
++
++    def test_refuteCryptedPassword(self):
++        """
++        L{verifyCryptedPassword} returns C{False} if the plaintext password
++        passed to it does not match the encrypted password passed to it.
++        """
++        password = 'string secret'
++        wrong = 'secret string'
++        crypted = crypt.crypt(password, password)
++        self.assertFalse(
++            checkers.verifyCryptedPassword(crypted, wrong),
++            '%r not supposed to be valid encrypted password for %s' % (
++                crypted, wrong))
++
++
++    def test_pwdGetByName(self):
++        """
++        L{_pwdGetByName} returns a tuple of items from the UNIX /etc/passwd
++        database if the L{pwd} module is present.
++        """
++        userdb = UserDatabase()
++        userdb.addUser(
++            'alice', 'secrit', 1, 2, 'first last', '/foo', '/bin/sh')
++        self.patch(checkers, 'pwd', userdb)
++        self.assertEquals(
++            checkers._pwdGetByName('alice'), userdb.getpwnam('alice'))
++
++
++    def test_pwdGetByNameWithoutPwd(self):
++        """
++        If the C{pwd} module isn't present, L{_pwdGetByName} returns C{None}.
++        """
++        self.patch(checkers, 'pwd', None)
++        self.assertIdentical(checkers._pwdGetByName('alice'), None)
++
++
++    def test_shadowGetByName(self):
++        """
++        L{_shadowGetByName} returns a tuple of items from the UNIX /etc/shadow
++        database if the L{spwd} is present.
++        """
++        userdb = ShadowDatabase()
++        userdb.addUser('bob', 'passphrase', 1, 2, 3, 4, 5, 6, 7)
++        self.patch(checkers, 'spwd', userdb)
++
++        self.mockos.euid = 2345
++        self.mockos.egid = 1234
++        self.patch(checkers, 'os', self.mockos)
++        self.patch(util, 'os', self.mockos)
++
++        self.assertEquals(
++            checkers._shadowGetByName('bob'), userdb.getspnam('bob'))
++        self.assertEquals(self.mockos.seteuidCalls, [0, 2345])
++        self.assertEquals(self.mockos.setegidCalls, [0, 1234])
++
++
++    def test_shadowGetByNameWithoutSpwd(self):
++        """
++        L{_shadowGetByName} uses the C{shadow} module to return a tuple of items
++        from the UNIX /etc/shadow database if the C{spwd} module is not present
++        and the C{shadow} module is.
++        """
++        userdb = ShadowDatabase()
++        userdb.addUser('bob', 'passphrase', 1, 2, 3, 4, 5, 6, 7)
++        self.patch(checkers, 'spwd', None)
++        self.patch(checkers, 'shadow', userdb)
++        self.patch(checkers, 'os', self.mockos)
++        self.patch(util, 'os', self.mockos)
++
++        self.mockos.euid = 2345
++        self.mockos.egid = 1234
++
++        self.assertEquals(
++            checkers._shadowGetByName('bob'), userdb.getspnam('bob'))
++        self.assertEquals(self.mockos.seteuidCalls, [0, 2345])
++        self.assertEquals(self.mockos.setegidCalls, [0, 1234])
++
++
++    def test_shadowGetByNameWithoutEither(self):
++        """
++        L{_shadowGetByName} returns C{None} if neither C{spwd} nor C{shadow} is
++        present.
++        """
++        self.patch(checkers, 'spwd', None)
++        self.patch(checkers, 'shadow', None)
++        self.patch(checkers, 'os', self.mockos)
++
++        self.assertIdentical(checkers._shadowGetByName('bob'), None)
++        self.assertEquals(self.mockos.seteuidCalls, [])
++        self.assertEquals(self.mockos.setegidCalls, [])
++
++
+ 
+ class SSHPublicKeyDatabaseTestCase(TestCase):
+     """
+     Tests for L{SSHPublicKeyDatabase}.
+     """
+-
+-    if pwd is None:
+-        skip = "Cannot run without pwd module"
+-    elif SSHPublicKeyDatabase is None:
+-        skip = "Cannot run without PyCrypto or PyASN1"
++    skip = euidSkip or dependencySkip
+ 
+     def setUp(self):
+-        self.checker = SSHPublicKeyDatabase()
++        self.checker = checkers.SSHPublicKeyDatabase()
+         self.key1 = base64.encodestring("foobar")
+         self.key2 = base64.encodestring("eggspam")
+         self.content = "t1 %s foo\nt2 %s egg\n" % (self.key1, self.key2)
+@@ -52,16 +189,16 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         self.mockos = MockOS()
+         self.mockos.path = FilePath(self.mktemp())
+         self.mockos.path.makedirs()
++        self.patch(checkers, 'os', self.mockos)
++        self.patch(util, 'os', self.mockos)
+         self.sshDir = self.mockos.path.child('.ssh')
+         self.sshDir.makedirs()
+ 
+         userdb = UserDatabase()
+-        userdb.addUser('user', 'password', 1, 2, 'first last',
+-                self.mockos.path.path, '/bin/shell')
+-
+-        self.patch(pwd, "getpwnam", userdb.getpwnam)
+-        self.patch(os, "seteuid", self.mockos.seteuid)
+-        self.patch(os, "setegid", self.mockos.setegid)
++        userdb.addUser(
++            'user', 'password', 1, 2, 'first last',
++            self.mockos.path.path, '/bin/shell')
++        self.checker._userdb = userdb
+ 
+ 
+     def _testCheckKey(self, filename):
+@@ -106,16 +243,20 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         keyFile.chmod(0000)
+         self.addCleanup(keyFile.chmod, 0777)
+         # And restore the right mode when seteuid is called
+-        savedSeteuid = os.seteuid
++        savedSeteuid = self.mockos.seteuid
+         def seteuid(euid):
+             keyFile.chmod(0777)
+             return savedSeteuid(euid)
+-        self.patch(os, "seteuid", seteuid)
++        self.mockos.euid = 2345
++        self.mockos.egid = 1234
++        self.patch(self.mockos, "seteuid", seteuid)
++        self.patch(checkers, 'os', self.mockos)
++        self.patch(util, 'os', self.mockos)
+         user = UsernamePassword("user", "password")
+         user.blob = "foobar"
+         self.assertTrue(self.checker.checkKey(user))
+-        self.assertEqual(self.mockos.seteuidCalls, [0, 1, 0, os.getuid()])
+-        self.assertEqual(self.mockos.setegidCalls, [2, os.getgid()])
++        self.assertEqual(self.mockos.seteuidCalls, [0, 1, 0, 2345])
++        self.assertEqual(self.mockos.setegidCalls, [2, 1234])
+ 
+ 
+     def test_requestAvatarId(self):
+@@ -126,8 +267,9 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         def _checkKey(ignored):
+             return True
+         self.patch(self.checker, 'checkKey', _checkKey)
+-        credentials = SSHPrivateKey('test', 'ssh-rsa', keydata.publicRSA_openssh,
+-                                    'foo', keys.Key.fromString(keydata.privateRSA_openssh).sign('foo'))
++        credentials = SSHPrivateKey(
++            'test', 'ssh-rsa', keydata.publicRSA_openssh, 'foo',
++            keys.Key.fromString(keydata.privateRSA_openssh).sign('foo'))
+         d = self.checker.requestAvatarId(credentials)
+         def _verify(avatarId):
+             self.assertEqual(avatarId, 'test')
+@@ -144,7 +286,8 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         def _checkKey(ignored):
+             return True
+         self.patch(self.checker, 'checkKey', _checkKey)
+-        credentials = SSHPrivateKey('test', 'ssh-rsa', keydata.publicRSA_openssh, None, None)
++        credentials = SSHPrivateKey(
++            'test', 'ssh-rsa', keydata.publicRSA_openssh, None, None)
+         d = self.checker.requestAvatarId(credentials)
+         return self.assertFailure(d, ValidPublicKey)
+ 
+@@ -170,8 +313,9 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         def _checkKey(ignored):
+             return True
+         self.patch(self.checker, 'checkKey', _checkKey)
+-        credentials = SSHPrivateKey('test', 'ssh-rsa', keydata.publicRSA_openssh,
+-                                    'foo', keys.Key.fromString(keydata.privateDSA_openssh).sign('foo'))
++        credentials = SSHPrivateKey(
++            'test', 'ssh-rsa', keydata.publicRSA_openssh, 'foo',
++            keys.Key.fromString(keydata.privateDSA_openssh).sign('foo'))
+         d = self.checker.requestAvatarId(credentials)
+         return self.assertFailure(d, UnauthorizedLogin)
+ 
+@@ -194,25 +338,25 @@ class SSHPublicKeyDatabaseTestCase(TestC
+         return self.assertFailure(d, UnauthorizedLogin)
+ 
+ 
++
+ class SSHProtocolCheckerTestCase(TestCase):
+     """
+     Tests for L{SSHProtocolChecker}.
+     """
+ 
+-    if SSHPublicKeyDatabase is None:
+-        skip = "Cannot run without PyCrypto"
++    skip = dependencySkip
+ 
+     def test_registerChecker(self):
+         """
+         L{SSHProcotolChecker.registerChecker} should add the given checker to
+         the list of registered checkers.
+         """
+-        checker = SSHProtocolChecker()
++        checker = checkers.SSHProtocolChecker()
+         self.assertEqual(checker.credentialInterfaces, [])
+-        checker.registerChecker(SSHPublicKeyDatabase(), )
++        checker.registerChecker(checkers.SSHPublicKeyDatabase(), )
+         self.assertEqual(checker.credentialInterfaces, [ISSHPrivateKey])
+         self.assertIsInstance(checker.checkers[ISSHPrivateKey],
+-                              SSHPublicKeyDatabase)
++                              checkers.SSHPublicKeyDatabase)
+ 
+ 
+     def test_registerCheckerWithInterface(self):
+@@ -222,12 +366,13 @@ class SSHProtocolCheckerTestCase(TestCas
+         registered instead of what the checker specifies in
+         credentialIntefaces.
+         """
+-        checker = SSHProtocolChecker()
++        checker = checkers.SSHProtocolChecker()
+         self.assertEqual(checker.credentialInterfaces, [])
+-        checker.registerChecker(SSHPublicKeyDatabase(), IUsernamePassword)
++        checker.registerChecker(checkers.SSHPublicKeyDatabase(),
++                                IUsernamePassword)
+         self.assertEqual(checker.credentialInterfaces, [IUsernamePassword])
+         self.assertIsInstance(checker.checkers[IUsernamePassword],
+-                              SSHPublicKeyDatabase)
++                              checkers.SSHPublicKeyDatabase)
+ 
+ 
+     def test_requestAvatarId(self):
+@@ -235,7 +380,7 @@ class SSHProtocolCheckerTestCase(TestCas
+         L{SSHProtocolChecker.requestAvatarId} should defer to one if its
+         registered checkers to authenticate a user.
+         """
+-        checker = SSHProtocolChecker()
++        checker = checkers.SSHProtocolChecker()
+         passwordDatabase = InMemoryUsernamePasswordDatabaseDontUse()
+         passwordDatabase.addUser('test', 'test')
+         checker.registerChecker(passwordDatabase)
+@@ -251,7 +396,7 @@ class SSHProtocolCheckerTestCase(TestCas
+         False from _areDone, then L{SSHProtocolChecker} should raise
+         L{NotEnoughAuthentication}.
+         """
+-        checker = SSHProtocolChecker()
++        checker = checkers.SSHProtocolChecker()
+         def _areDone(avatarId):
+             return False
+         self.patch(checker, 'areDone', _areDone)
+@@ -268,7 +413,7 @@ class SSHProtocolCheckerTestCase(TestCas
+         If the passed credentials aren't handled by any registered checker,
+         L{SSHProtocolChecker} should raise L{UnhandledCredentials}.
+         """
+-        checker = SSHProtocolChecker()
++        checker = checkers.SSHProtocolChecker()
+         d = checker.requestAvatarId(UsernamePassword('test', 'test'))
+         return self.assertFailure(d, UnhandledCredentials)
+ 
+@@ -277,4 +422,188 @@ class SSHProtocolCheckerTestCase(TestCas
+         """
+         The default L{SSHProcotolChecker.areDone} should simply return True.
+         """
+-        self.assertEqual(SSHProtocolChecker().areDone(None), True)
++        self.assertEquals(checkers.SSHProtocolChecker().areDone(None), True)
++
++
++
++class UNIXPasswordDatabaseTests(TestCase):
++    """
++    Tests for L{UNIXPasswordDatabase}.
++    """
++    skip = cryptSkip or dependencySkip
++
++    def assertLoggedIn(self, d, username):
++        """
++        Assert that the L{Deferred} passed in is called back with the value
++        'username'.  This represents a valid login for this TestCase.
++
++        NOTE: To work, this method's return value must be returned from the
++        test method, or otherwise hooked up to the test machinery.
++
++        @param d: a L{Deferred} from an L{IChecker.requestAvatarId} method.
++        @type d: L{Deferred}
++        @rtype: L{Deferred}
++        """
++        result = []
++        d.addBoth(result.append)
++        self.assertEquals(len(result), 1, "login incomplete")
++        if isinstance(result[0], Failure):
++            result[0].raiseException()
++        self.assertEquals(result[0], username)
++
++
++    def test_defaultCheckers(self):
++        """
++        L{UNIXPasswordDatabase} with no arguments has checks the C{pwd} database
++        and then the C{spwd} database.
++        """
++        checker = checkers.UNIXPasswordDatabase()
++
++        def crypted(username, password):
++            salt = crypt.crypt(password, username)
++            crypted = crypt.crypt(password, '$1$' + salt)
++            return crypted
++
++        pwd = UserDatabase()
++        pwd.addUser('alice', crypted('alice', 'password'),
++                    1, 2, 'foo', '/foo', '/bin/sh')
++        # x and * are convention for "look elsewhere for the password"
++        pwd.addUser('bob', 'x', 1, 2, 'bar', '/bar', '/bin/sh')
++        spwd = ShadowDatabase()
++        spwd.addUser('alice', 'wrong', 1, 2, 3, 4, 5, 6, 7)
++        spwd.addUser('bob', crypted('bob', 'password'),
++                     8, 9, 10, 11, 12, 13, 14)
++
++        self.patch(checkers, 'pwd', pwd)
++        self.patch(checkers, 'spwd', spwd)
++
++        mockos = MockOS()
++        self.patch(checkers, 'os', mockos)
++        self.patch(util, 'os', mockos)
++
++        mockos.euid = 2345
++        mockos.egid = 1234
++
++        cred = UsernamePassword("alice", "password")
++        self.assertLoggedIn(checker.requestAvatarId(cred), 'alice')
++        self.assertEquals(mockos.seteuidCalls, [])
++        self.assertEquals(mockos.setegidCalls, [])
++        cred.username = "bob"
++        self.assertLoggedIn(checker.requestAvatarId(cred), 'bob')
++        self.assertEquals(mockos.seteuidCalls, [0, 2345])
++        self.assertEquals(mockos.setegidCalls, [0, 1234])
++
++
++    def assertUnauthorizedLogin(self, d):
++        """
++        Asserts that the L{Deferred} passed in is erred back with an
++        L{UnauthorizedLogin} L{Failure}.  This reprsents an invalid login for
++        this TestCase.
++
++        NOTE: To work, this method's return value must be returned from the
++        test method, or otherwise hooked up to the test machinery.
++
++        @param d: a L{Deferred} from an L{IChecker.requestAvatarId} method.
++        @type d: L{Deferred}
++        @rtype: L{None}
++        """
++        self.assertRaises(
++            checkers.UnauthorizedLogin, self.assertLoggedIn, d, 'bogus value')
++
++
++    def test_passInCheckers(self):
++        """
++        L{UNIXPasswordDatabase} takes a list of functions to check for UNIX
++        user information.
++        """
++        password = crypt.crypt('secret', 'secret')
++        userdb = UserDatabase()
++        userdb.addUser('anybody', password, 1, 2, 'foo', '/bar', '/bin/sh')
++        checker = checkers.UNIXPasswordDatabase([userdb.getpwnam])
++        self.assertLoggedIn(
++            checker.requestAvatarId(UsernamePassword('anybody', 'secret')),
++            'anybody')
++
++
++    def test_verifyPassword(self):
++        """
++        If the encrypted password provided by the getpwnam function is valid
++        (verified by the L{verifyCryptedPassword} function), we callback the
++        C{requestAvatarId} L{Deferred} with the username.
++        """
++        def verifyCryptedPassword(crypted, pw):
++            return crypted == pw
++        def getpwnam(username):
++            return [username, username]
++        self.patch(checkers, 'verifyCryptedPassword', verifyCryptedPassword)
++        checker = checkers.UNIXPasswordDatabase([getpwnam])
++        credential = UsernamePassword('username', 'username')
++        self.assertLoggedIn(checker.requestAvatarId(credential), 'username')
++
++
++    def test_failOnKeyError(self):
++        """
++        If the getpwnam function raises a KeyError, the login fails with an
++        L{UnauthorizedLogin} exception.
++        """
++        def getpwnam(username):
++            raise KeyError(username)
++        checker = checkers.UNIXPasswordDatabase([getpwnam])
++        credential = UsernamePassword('username', 'username')
++        self.assertUnauthorizedLogin(checker.requestAvatarId(credential))
++
++
++    def test_failOnBadPassword(self):
++        """
++        If the verifyCryptedPassword function doesn't verify the password, the
++        login fails with an L{UnauthorizedLogin} exception.
++        """
++        def verifyCryptedPassword(crypted, pw):
++            return False
++        def getpwnam(username):
++            return [username, username]
++        self.patch(checkers, 'verifyCryptedPassword', verifyCryptedPassword)
++        checker = checkers.UNIXPasswordDatabase([getpwnam])
++        credential = UsernamePassword('username', 'username')
++        self.assertUnauthorizedLogin(checker.requestAvatarId(credential))
++
++
++    def test_loopThroughFunctions(self):
++        """
++        UNIXPasswordDatabase.requestAvatarId loops through each getpwnam
++        function associated with it and returns a L{Deferred} which fires with
++        the result of the first one which returns a value other than None.
++        ones do not verify the password.
++        """
++        def verifyCryptedPassword(crypted, pw):
++            return crypted == pw
++        def getpwnam1(username):
++            return [username, 'not the password']
++        def getpwnam2(username):
++            return [username, username]
++        self.patch(checkers, 'verifyCryptedPassword', verifyCryptedPassword)
++        checker = checkers.UNIXPasswordDatabase([getpwnam1, getpwnam2])
++        credential = UsernamePassword('username', 'username')
++        self.assertLoggedIn(checker.requestAvatarId(credential), 'username')
++
++
++    def test_failOnSpecial(self):
++        """
++        If the password returned by any function is C{""}, C{"x"}, or C{"*"} it
++        is not compared against the supplied password.  Instead it is skipped.
++        """
++        pwd = UserDatabase()
++        pwd.addUser('alice', '', 1, 2, '', 'foo', 'bar')
++        pwd.addUser('bob', 'x', 1, 2, '', 'foo', 'bar')
++        pwd.addUser('carol', '*', 1, 2, '', 'foo', 'bar')
++        self.patch(checkers, 'pwd', pwd)
++
++        checker = checkers.UNIXPasswordDatabase([checkers._pwdGetByName])
++        cred = UsernamePassword('alice', '')
++        self.assertUnauthorizedLogin(checker.requestAvatarId(cred))
++
++        cred = UsernamePassword('bob', 'x')
++        self.assertUnauthorizedLogin(checker.requestAvatarId(cred))
++
++        cred = UsernamePassword('carol', '*')
++        self.assertUnauthorizedLogin(checker.requestAvatarId(cred))
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_transport.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_transport.py
+@@ -21,7 +21,7 @@ if pyasn1 is not None and Crypto is not
+     from twisted.conch.test import keydata
+ else:
+     if pyasn1 is None:
+-        dependencySkip = "can't run w/o PyASN1"
++        dependencySkip = "Cannot run without PyASN1"
+     elif Crypto is None:
+         dependencySkip = "can't run w/o PyCrypto"
+ 
+@@ -326,7 +326,7 @@ class TransportTestCase(unittest.TestCas
+         skip = "cannot run w/o PyCrypto"
+ 
+     if pyasn1 is None:
+-        skip = "cannot run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def setUp(self):
+@@ -1804,7 +1804,7 @@ class SSHCiphersTestCase(unittest.TestCa
+         skip = "cannot run w/o PyCrypto"
+ 
+     if pyasn1 is None:
+-        skip = "cannot run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def test_init(self):
+@@ -1913,7 +1913,7 @@ class CounterTestCase(unittest.TestCase)
+         skip = "cannot run w/o PyCrypto"
+ 
+     if pyasn1 is None:
+-        skip = "cannot run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def test_init(self):
+@@ -1946,7 +1946,7 @@ class TransportLoopbackTestCase(unittest
+         skip = "cannot run w/o PyCrypto"
+ 
+     if pyasn1 is None:
+-        skip = "cannot run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def _runClientServer(self, mod):
+@@ -2128,7 +2128,7 @@ class OldFactoryTestCase(unittest.TestCa
+         skip = "cannot run w/o PyCrypto"
+ 
+     if pyasn1 is None:
+-        skip = "cannot run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def test_getPublicKeysWarning(self):
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_tap.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_tap.py
+@@ -43,7 +43,7 @@ class MakeServiceTest(TestCase):
+         skip = "can't run w/o PyCrypto"
+ 
+     if not pyasn1:
+-        skip = "can't run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     if not unix:
+         skip = "can't run on non-posix computers"
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_ssh.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_ssh.py
+@@ -536,7 +536,7 @@ class SSHProtocolTestCase(unittest.TestC
+         skip = "can't run w/o PyCrypto"
+ 
+     if not pyasn1:
+-        skip = "can't run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     def _ourServerOurClientTest(self, name='session', **kwargs):
+         """
+@@ -825,7 +825,7 @@ class TestSSHFactory(unittest.TestCase):
+         skip = "can't run w/o PyCrypto"
+ 
+     if not pyasn1:
+-        skip = "can't run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     def makeSSHFactory(self, primes=None):
+         sshFactory = factory.SSHFactory()
+@@ -886,7 +886,7 @@ class MPTestCase(unittest.TestCase):
+         skip = "can't run w/o PyCrypto"
+ 
+     if not pyasn1:
+-        skip = "can't run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+ 
+     def test_getMP(self):
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_keys.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_keys.py
+@@ -31,7 +31,7 @@ class HelpersTestCase(unittest.TestCase)
+     if Crypto is None:
+         skip = "cannot run w/o PyCrypto"
+     if pyasn1 is None:
+-        skip = "cannot run w/o/ PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     def setUp(self):
+         self._secureRandom = randbytes.secureRandom
+@@ -105,7 +105,7 @@ class KeyTestCase(unittest.TestCase):
+     if Crypto is None:
+         skip = "cannot run w/o PyCrypto"
+     if pyasn1 is None:
+-        skip = "cannot run w/o/ PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     def setUp(self):
+         self.rsaObj = Crypto.PublicKey.RSA.construct((1L, 2L, 3L, 4L, 5L))
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_scripts.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_scripts.py
+@@ -8,7 +8,7 @@ Tests for the command-line interfaces to
+ try:
+     import pyasn1
+ except ImportError:
+-    pyasn1Skip =  "can't run w/o PyASN1"
++    pyasn1Skip =  "Cannot run without PyASN1"
+ else:
+     pyasn1Skip = None
+ 
+--- twisted-conch-11.1.0.orig/twisted/conch/test/test_conch.py
++++ twisted-conch-11.1.0/twisted/conch/test/test_conch.py
+@@ -266,7 +266,7 @@ class ConchServerSetupMixin:
+         skip = "can't run w/o PyCrypto"
+ 
+     if not pyasn1:
+-        skip = "can't run w/o PyASN1"
++        skip = "Cannot run without PyASN1"
+ 
+     realmFactory = staticmethod(lambda: ConchTestRealm('testuser'))
+ 
